@@ -11,7 +11,6 @@ func TestBytesToString(t *testing.T) {
 	testKiloBytes := BytesToString(4755)          // Should get : 4.64 KB
 	testMegaBytes := BytesToString(6541615)       // Should get : 6.24 MB
 	testGigaBytes := BytesToString(2571257332)    // Should get : 2.39 GB
-	testTeraBytes := BytesToString(3785103697458) // Should get : 3.44 TB
 
 	if testBytes != "123 B" {
 		t.Errorf("Unexpected return for %s, got %s, expecting %s", "BytesToString(123)", testBytes, "123 B")
@@ -21,7 +20,5 @@ func TestBytesToString(t *testing.T) {
 		t.Errorf("Unexpected return for %s, got %s, expecting %s", "BytesToString(6541615)", testBytes, "6.24 MB")
 	} else if testGigaBytes != "2.39 GB" {
 		t.Errorf("Unexpected return for %s, got %s, expecting %s", "BytesToString(2571257332)", testBytes, "2.39 GB")
-	} else if testTeraBytes != "3.44 TB" {
-		t.Errorf("Unexpected return for %s, got %s, expecting %s", "BytesToString(3785103697458)", testBytes, "3.44 TB")
 	}
 }
