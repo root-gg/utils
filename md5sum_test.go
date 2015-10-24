@@ -1,8 +1,8 @@
 package utils
 
 import (
-	"testing"
 	"os"
+	"testing"
 )
 
 func TestMd5sum(t *testing.T) {

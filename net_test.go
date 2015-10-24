@@ -1,22 +1,9 @@
 package utils
 
 import (
-	"fmt"
 	"net"
 	"testing"
 )
-
-func main() {
-	fmt.Println("Hello, playground")
-	fmt.Printf("%d\n", NtoI(net.IP{0, 0, 0, 0}))
-	fmt.Printf("%d\n", NtoI(net.IP{0, 0, 0, 1}))
-	fmt.Printf("%d\n", NtoI(net.IP{128, 0, 0, 0}))
-	fmt.Printf("%d\n", NtoI(net.IP{255, 255, 255, 255}))
-	fmt.Printf("%v\n", ItoN(uint32(0)))
-	fmt.Printf("%v\n", ItoN(uint32(1)))
-	fmt.Printf("%v\n", ItoN(uint32(2147483648)))
-	fmt.Printf("%v\n", ItoN(uint32(4294967295)))
-}
 
 func TestNtoI(t *testing.T) {
 	var ipInt uint32
