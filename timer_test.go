@@ -93,6 +93,18 @@ func TestTimerElapsed(t *testing.T) {
 	}
 }
 
+func TestTimerSplit(t *testing.T) {
+	timer := NewSplitTime("timer")
+	timer.Start()
+	sleep := 100 * time.Millisecond
+	time.Sleep(sleep)
+	elapsed := TruncateDuration(timer.Split(), 10*time.Millisecond)
+	if elapsed != sleep {
+		t.Fatalf("Invalid split duration %v. Expected %v", elapsed, sleep)
+	}
+	timer.Stop()
+}
+
 func TestTimerStopUninitalizedTimer(t *testing.T) {
 	timer := NewSplitTime("timer")
 	timer.Stop()
