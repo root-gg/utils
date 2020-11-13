@@ -31,17 +31,17 @@ func TestTimerStatus(t *testing.T) {
 func TestTimerDates(t *testing.T) {
 	timer := NewSplitTime("timer")
 	if timer.StartDate() != nil {
-		t.Error("Start date on uninitalized timer : %s", timer.StartDate().String())
+		t.Errorf("Start date on uninitalized timer : %s", timer.StartDate().String())
 	}
 	if timer.StopDate() != nil {
-		t.Error("Stop date on uninitalized timer : %s", timer.StopDate().String())
+		t.Errorf("Stop date on uninitalized timer : %s", timer.StopDate().String())
 	}
 	timer.Start()
 	if timer.StartDate() == nil {
 		t.Error("Missing start date on running timer")
 	}
 	if timer.StopDate() != nil {
-		t.Error("Stop date on running timer : %s", timer.StopDate().String())
+		t.Errorf("Stop date on running timer : %s", timer.StopDate().String())
 	}
 	timer.Stop()
 	if timer.StartDate() == nil {
